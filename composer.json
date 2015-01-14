@@ -1,0 +1,20 @@
+{
+    "name": "quilfe/omni-grouper",
+    "description": "PHP class that allows to group raw table data into a multi-level array",
+    "keywords": ["php", "array", "grouping", "data"],
+    "license": "LGPL-3.0",
+    "authors": [{
+        "name": "Vitaly Bormotov",
+        "email": "bormvit@mail.ru",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Quilfe\\OmniGrouper\\": ""
+        }
+    },
+    "target-dir" : "Quilfe/OmniGrouper"
+}
