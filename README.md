@@ -51,3 +51,9 @@ $result = $grouper->group($rawData);
 OmniGrouper can process numeric data and group it by fields of several built-in types.
 Also you could use custom field type specifying a callback to convert its value into a string or a number.
 When you group the data by numeric or date field, its values will be automatically splitted into a sections.
+
+## Contributing.
+
+If you want to make some options customizable, send a pull request.
+Also unit tests of PHPUnit and extending of this README by description and examples would be useful.
+Please follow PSR-2 code standarts.
