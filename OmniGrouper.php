@@ -420,7 +420,7 @@ class OmniGrouper
                     }
                     unset($groupedData[$key]);
                 } elseif ($mode == 'tertiary') {
-                    foreach ($groupedData as $title => $groupedRow) {
+                    foreach ($groupedData as $groupedRow) {
                         if (isset($groupedRow[$key])) {
                             $groupedRow['other']['val'] += $groupedRow[$key]['val'];
                             unset($groupedRow[$key]);
@@ -499,8 +499,7 @@ class OmniGrouper
             }
 
             $data = (float) $data;
-            $idx = false;
-            foreach ($this->numericSegments[$axis] as $segment) {
+            foreach ($this->numericSegments[$isTertiary ? 'tertiary' : 'base'] as $segment) {
                 if ($segment['right'] >= $data && $segment['left'] <= $data) {
                     $data = ($segment['left'] == $segment['right'])
                         ? $segment['left']
