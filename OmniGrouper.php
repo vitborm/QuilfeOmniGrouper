@@ -469,7 +469,7 @@ class OmniGrouper
             }
         }
 
-        if ($this->parameters['uniqueIdTitle'] && $title == $this->parameters['leftTitle']) {
+        if ($this->parameters['uniqueIdTitle']) {
             $result[$title]['uniqueId'] = $segment[$this->parameters['uniqueIdTitle']];
         }
     }
