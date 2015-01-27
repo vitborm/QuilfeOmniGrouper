@@ -24,7 +24,7 @@ class OmniGrouper
     const TYPE_INTEGER = 2;
 
     const TYPE_DATE = 3;
-    
+
     const TYPE_FLOAT = 4;
 
     const TYPE_BOOLEAN = 5;
@@ -49,8 +49,8 @@ class OmniGrouper
      * Constructor.
      *
      * @param integer      $baseType
-     * @param integer|null $tertiaryType  (default: null)
-     * @param array        $parameters    (default: [])
+     * @param integer|null $tertiaryType (default: null)
+     * @param array        $parameters   (default: [])
      *
      * @throws LogicException
      */
@@ -65,6 +65,7 @@ class OmniGrouper
             'valueTitle' => 'value',
             'countTitle' => null,
             'minPercent' => 0.002,
+            'uniqueIdTitle' => null,
         ];
 
         $this->parameters = array_merge($defaultParameters, $parameters);
@@ -151,6 +152,10 @@ class OmniGrouper
                     ],
                 ],
             ];
+        }
+
+        if ($this->parameters['uniqueIdTitle']) {
+            $result['other']['uniqueId'] = null;
         }
 
         $baseAxisComparator = 'segmentComparator';
@@ -462,6 +467,10 @@ class OmniGrouper
             } else {
                 $result[$title]['val'] += $segment[$this->parameters['valueTitle']];
             }
+        }
+
+        if ($this->parameters['uniqueIdTitle']) {
+            $result[$title]['uniqueId'] = $segment[$this->parameters['uniqueIdTitle']];
         }
     }
 
